@@ -1,0 +1,24 @@
+.todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1.5em 0;
+
+  .todo__heading {
+    margin-bottom: 1em;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    // & > * {
+    //   margin: 0 0.5em 0.5em 0;
+    // }
+  }
+  &__empty {
+    font-weight: 500;
+  }
+}

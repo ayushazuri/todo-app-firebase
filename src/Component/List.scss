@@ -1,0 +1,40 @@
+.todocards {
+  margin: 0 1em 1em 0;
+  flex: 0 1;
+  min-width: 18em;
+  @media (max-width: 600px) {
+    min-width: 15em;
+  }
+  padding: 1.2em;
+  padding-bottom: 0.7em;
+  font-weight: 500;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #d9dbdf;
+  min-height: 15em;
+  .card__heading {
+    margin-bottom: 0.5em;
+    text-align: center;
+    font-weight: 600;
+  }
+  .card__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.7em;
+  }
+  .card__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.9em;
+  }
+  .card__button {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,32 @@
+.add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.625em;
+  font-weight: 500;
+  &__heading {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+  &__form {
+    width: 60%;
+    @media (max-width: 600px) {
+      width: 85%;
+    }
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+  }
+  textarea,
+  input {
+    color: #001c55;
+    font-weight: 500;
+  }
+  &__label {
+    font-weight: bold;
+  }
+}
