@@ -5,18 +5,36 @@ import "./ToDo.scss";
 
 const Completed = () => {
   const [data, setData] = useState([]);
+  const [asc, setAsc] = useState(true);
 
   useEffect(() => {
     db.collection("completed")
-      .orderBy("timestamp", "asc")
+      .orderBy("timestamp", asc ? "asc" : "desc")
       .onSnapshot((snapshot) => {
         setData(snapshot.docs.map((doc) => ({ id: doc.id, todo: doc.data() })));
       });
-  }, []);
-  console.log(data);
+  }, [asc]);
   return (
     <div className="todo">
-      <h1 className="todo__heading">Completed Tasks</h1>
+      <div className="todo__heading">
+        <h1 className="todo__title ">Completed Tasks</h1>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button
+            type="button"
+            class="btn btn-primary"
+            onClick={() => setAsc(true)}
+          >
+            ASC
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            onClick={() => setAsc(false)}
+          >
+            DESC
+          </button>
+        </div>
+      </div>
       {data.length === 0 ? (
         <p className="todo__empty" class="alert alert-danger" role="alert">
           None of the Tasks have been completed!

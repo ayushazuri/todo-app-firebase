@@ -6,9 +6,13 @@
   margin: 1.5em 0;
 
   .todo__heading {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     font-weight: bold;
     text-align: center;
+
+    .btn-group {
+      margin: 10px;
+    }
   }
   &__cards {
     display: flex;

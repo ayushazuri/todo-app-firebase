@@ -4,7 +4,6 @@ import "./List.scss";
 import firebase from "firebase";
 const List = ({ card }) => {
   const handleDelete = () => {
-    const todo = card.todo;
     db.collection("completed").add({
       ...card.todo,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),

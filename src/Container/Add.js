@@ -34,7 +34,7 @@ const Add = () => {
             className="form-control"
             name="title"
             id="title"
-            value={todo.heading}
+            value={todo.title}
             onChange={(e) => handleChange(e)}
             placeholder="Title"
           />

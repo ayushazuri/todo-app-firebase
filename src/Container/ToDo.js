@@ -5,18 +5,35 @@ import "./ToDo.scss";
 //add a button to ask to the user for asc or desc
 const ToDo = () => {
   const [data, setData] = useState([]);
-
+  const [asc, setAsc] = useState(true);
   useEffect(() => {
     db.collection("todos")
-      .orderBy("timestamp", "asc")
+      .orderBy("timestamp", asc ? "asc" : "desc")
       .onSnapshot((snapshot) => {
         setData(snapshot.docs.map((doc) => ({ id: doc.id, todo: doc.data() })));
-        // console.log(snapshot.docs.map((doc) => doc.data()));
       });
-  }, []);
+  }, [asc]);
   return (
     <div className="todo">
-      <h1 className="todo__heading">Tasks to do</h1>
+      <div className="todo__heading">
+        <h1 className="todo__title ">Tasks to do</h1>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button
+            type="button"
+            class="btn btn-primary"
+            onClick={() => setAsc(true)}
+          >
+            ASC
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            onClick={() => setAsc(false)}
+          >
+            DESC
+          </button>
+        </div>
+      </div>
       {data.length === 0 ? (
         <p className="todo__empty" class="alert alert-danger" role="alert">
           There are no tasks present right now!
